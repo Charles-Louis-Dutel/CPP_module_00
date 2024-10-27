@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:28:35 by cdutel            #+#    #+#             */
-/*   Updated: 2024/10/27 13:25:30 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/10/27 14:13:59 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class PhoneBook
 	private:
 		Contact _contact_list[8];
 		int		_index;
+		int		full;
 };
 
 #endif

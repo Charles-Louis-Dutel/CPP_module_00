@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:29:43 by cdutel            #+#    #+#             */
-/*   Updated: 2024/10/27 13:58:44 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/10/27 14:20:22 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ PhoneBook::PhoneBook(void)
 {
 	std::cout << "PhoneBook constructor called" << std::endl;
 	this->_index = 0;
+	this->full = 0;
 }
 
 PhoneBook::~PhoneBook(void)
@@ -27,11 +28,12 @@ void	PhoneBook::add_contact(void)
 {
 	std::string	answer;
 
-	if (this->_index < 8)
+	if (this->full == 0)
 	{
 		this->_contact_list[this->_index].set_contact();
-		//this->_contact_list[this->_index].Print_contact();
 		this->_index++;
+		if (this->_index == 8)
+			this->full = 1;
 	}
 	else
 	{
@@ -42,8 +44,9 @@ void	PhoneBook::add_contact(void)
 			std::getline(std::cin, answer);
 			if (answer.compare("yes") == 0)
 			{
-				this->_index = 0;
-				this->_contact_list[this->_index].set_contact();
+				for (int i = 0; i < 7; i++)
+					this->_contact_list[i] = this->_contact_list[i + 1];
+				this->_contact_list[7].set_contact();
 				break ;
 			}
 			else if (answer.compare("no") == 0)
