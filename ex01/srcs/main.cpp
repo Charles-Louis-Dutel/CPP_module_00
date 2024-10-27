@@ -6,13 +6,14 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:29:17 by cdutel            #+#    #+#             */
-/*   Updated: 2024/10/27 13:57:23 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/10/27 14:47:04 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PhoneBook.hpp"
 #include "../includes/Contact.hpp"
-#include "../includes/Lib.hpp"
+#include <string>
+#include <iostream>
 
 int main (void)
 {

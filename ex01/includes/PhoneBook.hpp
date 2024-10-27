@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:28:35 by cdutel            #+#    #+#             */
-/*   Updated: 2024/10/27 14:13:59 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/10/27 14:45:36 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 # define PHONE_BOOK_HPP
 
 #include "Contact.hpp"
-#include "Lib.hpp"
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <sstream>
+
 
 class PhoneBook
 {

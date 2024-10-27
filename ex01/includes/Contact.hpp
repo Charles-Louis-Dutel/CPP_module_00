@@ -6,14 +6,17 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:29:13 by cdutel            #+#    #+#             */
-/*   Updated: 2024/10/27 13:25:18 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/10/27 14:47:18 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include "Lib.hpp"
+#include <string>
+#include <iostream>
+#include <iomanip>
+
 
 class Contact
 {
