@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:29:32 by cdutel            #+#    #+#             */
-/*   Updated: 2024/10/27 13:07:09 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/12/10 17:16:45 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Contact.hpp"
+#include <iostream>
 
 Contact::Contact(void)
 {
@@ -64,11 +65,36 @@ void	Contact::set_contact(void)
 	for (int i = 0; i < 5; i++)
 	{
 		std::cout << "Enter your " << this->_field[i] << " : ";
-		std::getline(std::cin, this->_contact_infos[i]);
+		if (!std::getline(std::cin, this->_contact_infos[i]))
+				break;
 		if (this->_contact_infos[i].compare("") == 0)
 		{
 			std::cout << "Field can't be empty, enter infos again please" << std::endl;
 			i--;
+		}
+		else
+		{
+			if (i == 3)
+			{
+				for (int k = 0; k < (int)_contact_infos[i].length(); k++)
+				{
+					if (!(this->_contact_infos[i][k] >= 48 && this->_contact_infos[i][k] <= 57))
+					{
+						std::cout << "Phone number should only have number" << std::endl;
+						i--;
+						break;
+					}
+				}
+			}
+			for (int j = 0; j < (int)_contact_infos[i].length(); j++)
+			{
+				if ((this->_contact_infos[i][j] >= 0 && this->_contact_infos[i][j] <= 31) || this->_contact_infos[i].compare("") == 0)
+				{
+					std::cout << "Field can't be empty, enter infos again please" << std::endl;
+					i--;
+					break;
+				}
+			}
 		}
 	}
 }

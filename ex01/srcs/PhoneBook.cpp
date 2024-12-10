@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:29:43 by cdutel            #+#    #+#             */
-/*   Updated: 2024/10/27 14:20:22 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/12/10 17:23:25 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	PhoneBook::add_contact(void)
 		while (1)
 		{
 			std::cout << "Do you want to continue (yes/no) : ";
-			std::getline(std::cin, answer);
+			if (!std::getline(std::cin, answer))
+				break;
 			if (answer.compare("yes") == 0)
 			{
 				for (int i = 0; i < 7; i++)
@@ -71,7 +72,8 @@ void	PhoneBook::search_contact(void) const
 	std::cout << "Please, enter the index of the contact to display : ";
 	while (true)
 	{
-		std::getline(std::cin, answer);
+		if (!std::getline(std::cin, answer))
+			break;
 		std::stringstream i(answer);
 		i >> index;
 		if (index < 1 || index > 8)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:29:17 by cdutel            #+#    #+#             */
-/*   Updated: 2024/10/27 14:47:04 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/12/10 17:15:52 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int main (void)
 	while (true)
 	{
 		std::cout << "Please enter a command: ";
-		std::getline(std::cin, command);
+		if (!std::getline(std::cin, command))
+			break;
 		if (command.compare("ADD") == 0)
 			directory.add_contact();
 		else if (command.compare("SEARCH") == 0)
